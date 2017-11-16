@@ -107,23 +107,25 @@ task dockerfileCreate(type: Dockerfile) {
     destFile = project.file('build/kumuluzee/Dockerfile')
     from 'openjdk:8-jdk'
     maintainer 'Jan Gasperlin "jg1724@student.uni-lj.si"'
-    environmentVariable("PORT", port)
+
     environmentVariable("JAR", buildKumuluzEE.archiveName)
-    environmentVariable("DB_NAME", 'rsobook-user_wall')
-    environmentVariable("DB_HOST", 'microservice-database')
-    environmentVariable("DB_PORT", '5432')
-    environmentVariable("DB_USERNAME", 'postgres')
-    environmentVariable("DB_PASSWORD", 'root')
+
+    environmentVariable("PORT", port)
+
+    environmentVariable("KUMULUZEE_DATASOURCES0_CONNECTIONURL", 'jdbc:postgresql://microservice-database:5432/rsobook-user_wall')
+    environmentVariable("KUMULUZEE_DATASOURCES0_USERNAME", 'postgres')
+    environmentVariable("KUMULUZEE_DATASOURCES0_PASSWORD", 'root')
+
     exposePort {
         port
     }
+
     addFile(buildKumuluzEE.archiveName, "/usr/local/bin/kumuluzee/")
-    addFile("config.yaml", "/usr/local/bin/kumuluzee")
     addFile("run.sh", "/usr/local/bin/kumuluzee")
     defaultCommand('/bin/bash','/usr/local/bin/kumuluzee/run.sh', 'start')
 }
 
-task dockerfileCopyScript(type: Copy){
+task dockerfileCopyScript(type: Copy) {
     group 'docker'
     from project.projectDir.path + "/build-dependency/run.sh"
     from project.projectDir.path + "/build-dependency/config.yaml"
