@@ -1,8 +1,8 @@
 kumuluzee:
-  name: ms.wall
+  name: ms-wall
   env:
     name: dev
-  version: 1.0.0
+  version: 2.0.0
   datasources:
     - jndi-name: jdbc/RsobookDS
       connection-url: jdbc:postgresql://localhost:55432/rsobook-user_wall

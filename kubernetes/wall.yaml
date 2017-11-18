@@ -10,7 +10,7 @@ spec:
         app: ms-wall
     spec:
       containers:
-        - image: rsobook/ms-wall:1.0.0
+        - image: rsobook/ms-wall:2.0.0
           name: ms-wall
           env:
             - name: PORT
