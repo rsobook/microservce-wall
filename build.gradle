@@ -125,8 +125,8 @@ task dockerfileCreate(type: Dockerfile) {
     environmentVariable("KUMULUZEE_DATASOURCES0_USERNAME", 'postgres')
     environmentVariable("KUMULUZEE_DATASOURCES0_PASSWORD", 'root')
 
-    environmentVariable("KUMULUZEE_CONFIG_ETCD_HOSTS", 'http://ms.etcd:2379')
-    environmentVariable("KUMULUZEE_DISCOVERY_ETCD_HOSTS", 'http://ms.etcd:2379')
+    environmentVariable("KUMULUZEE_CONFIG_ETCD_HOSTS", 'http://ms-etcd:2379')
+    environmentVariable("KUMULUZEE_DISCOVERY_ETCD_HOSTS", 'http://ms-etcd:2379')
 
     exposePort {
         port
