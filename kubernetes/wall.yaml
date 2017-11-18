@@ -19,6 +19,8 @@ spec:
               value: http://ms-etcd:2379
             - name: KUMULUZEE_CONFIG_ETCD_HOSTS
               value: http://ms-etcd:2379
+            - name: KUMULUZEE_DATASOURCES0_CONNECTIONURL
+              value: jdbc:postgresql://ms-database:5432/rsobook-user_wall
           ports:
           - containerPort: 80
             protocol: TCP
