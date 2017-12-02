@@ -1,9 +1,9 @@
-package si.fri.rsobook.rest.health;
+package si.fri.rsobook.health;
 
 import org.eclipse.microprofile.health.Health;
 import org.eclipse.microprofile.health.HealthCheck;
 import org.eclipse.microprofile.health.HealthCheckResponse;
-import si.fri.rsobook.rest.config.WallApiConfigProperties;
+import si.fri.rsobook.config.WallApiConfigProperties;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;

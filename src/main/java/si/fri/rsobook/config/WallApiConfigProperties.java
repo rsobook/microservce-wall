@@ -1,4 +1,4 @@
-package si.fri.rsobook.rest.config;
+package si.fri.rsobook.config;
 
 import com.kumuluz.ee.configuration.cdi.ConfigBundle;
 import com.kumuluz.ee.configuration.cdi.ConfigValue;
