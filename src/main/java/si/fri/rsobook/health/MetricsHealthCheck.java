@@ -20,7 +20,7 @@ public class MetricsHealthCheck  implements HealthCheck {
     @Override
     public HealthCheckResponse call() {
 
-        if(wallsReturnedCounter.getCount() > -1){
+        if(wallsReturnedCounter.getCount() < -1){
             return HealthCheckResponse.named(MetricsHealthCheck.class.getSimpleName()).down().build();
         }
 
